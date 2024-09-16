@@ -1,0 +1,22 @@
+- hosts: all
+  gather_facts: no
+# - name: Intro to Ansible Playbooks
+#   hosts: rapidpro
+#   gather_facts: no
+#   #become: yes
+#   become_user: ubuntu
+
+  tasks:
+  # - name: Upgrade all apt packages
+  #   apt:
+  #     force_apt_get: yes 
+  #     upgrade: dist
+  #   become: yes
+
+  - name : Execute
+    shell:
+     cmd: "whoami"
+    register: psk
+
+  - debug: var=psk
+    run_once: true
